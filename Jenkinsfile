@@ -1,4 +1,4 @@
-pipeline {
+pipeline {	
 	agent any
 		
 	environment {
@@ -6,9 +6,9 @@ pipeline {
 	}	
 		
 	
-		stages {
+	stages {
 			
-			stage('First') {
+		stage('First') {
 				steps {
 					sh '''
 						echo "Step One"
@@ -19,7 +19,7 @@ pipeline {
 			}
 
 
-			stage('Second') {
+		stage('Second') {
 				when { environment name: 'EXECUTE', value: 'true'}	
 				steps {
 					sh '''
@@ -29,7 +29,7 @@ pipeline {
 				}
 			} 
 
-			stage('Third') {
+		stage('Third') {
 				when { not { environment name: 'EXECUTE', value: 'true'}}
 				steps {
 					sh '''
