@@ -1,7 +1,6 @@
 pipeline {
 	agent any
-	}	
-	
+		
 	environment {
 		EXECUTE = 'true'
 	}	
@@ -39,4 +38,4 @@ pipeline {
 				}
 			}
 
-
+}
