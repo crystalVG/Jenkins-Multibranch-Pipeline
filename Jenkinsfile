@@ -8,18 +8,18 @@ pipeline {
 	
 	stages {
 			
-		stage('First') {
+	stage('First') {
 			steps {
+				echo "${execute}
 				sh '''
 					echo "Step One"
 				'''
-				script { env.EXECUTE ="true"}
 			       }
 			}
 		}
 
 
-		stage('Second') {
+		zstage('Second') {
 			when { environment name: 'EXECUTE', value: 'true'}	
 			steps {
 				sh '''
