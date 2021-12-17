@@ -1,25 +1,40 @@
 
 pipeline {
 	agent any
+	}	
+	
+	environment {
+		EXECUTE = 'true'
+	}	
+		
+	
 		stages {
-			stage('One') {
+			
+			stage('First') {
 				steps {
 					sh '''
 						echo "Step One"
 					'''
+					script { env.EXECUTE ="true"}
+					   }
 				}
 			}
 
 
-			stage('Two') {
+			stage('Second') {
+				when { environment name: 'EXECUTION', value: 'true'}	
+				}
 				steps {
 					sh '''
 						echo "Step Two"
 					'''
+					script { echo ${Updating Second Stage}
+				           }
 				}
 			} 
 
-			stage('Three') {
+			stage('Third') {
+				when { not { environment name: 'EXCUTION', calue: 'true'}}
 				steps {
 					sh '''
 						echo "Step Three"
