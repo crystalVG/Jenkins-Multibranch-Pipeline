@@ -6,7 +6,7 @@ pipeline {
 				steps {
 					sh '''
 						echo "Step One"
-					'
+					'''
 				}
 			}
 
@@ -15,7 +15,7 @@ pipeline {
 				steps {
 					sh '''
 						echo "Step Two"
-					'
+					'''
 				}
 			} 
 
@@ -23,7 +23,7 @@ pipeline {
 				steps {
 					sh '''
 						echo "Step Three"
-					'
+					'''
 				}
 			}
 		}
