@@ -27,8 +27,8 @@ pipeline {
 				steps {
 					sh '''
 						echo "Step Two"
+						echo "Updating Second Stage"
 					'''
-					script { echo ${Updating Second Stage}
 				           }
 				}
 			} 
