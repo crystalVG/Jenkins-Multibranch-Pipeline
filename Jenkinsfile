@@ -22,7 +22,7 @@ pipeline {
 
 
 			stage('Second') {
-				when { environment name: 'EXECUTION', value: 'true'}	
+				when { environment name: 'EXECUTE', value: 'true'}	
 				}
 				steps {
 					sh '''
@@ -34,7 +34,7 @@ pipeline {
 			} 
 
 			stage('Third') {
-				when { not { environment name: 'EXCUTION', calue: 'true'}}
+				when { not { environment name: 'EXECUTE', value: 'true'}}
 				steps {
 					sh '''
 						echo "Step Three"
